@@ -33,8 +33,7 @@ fun CoinListItem(
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier
-                .padding(16.dp)
+            modifier = Modifier.padding(16.dp)
         ) {
             AsyncImage(
                 model = coin.image,
@@ -59,10 +58,14 @@ fun CoinListItem(
                 )
             }
 
+
+            val changeColor = if (coin.priceChangePercentage >= 0) Color(0xFF4CAF50) else Color(0xFFF44336)
+            val changeText = String.format("%.2f%%", coin.priceChangePercentage)
+
             Text(
-                text = "#${coin.marketCapRank}",
+                text = changeText,
                 fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.primary,
+                color = changeColor,
                 fontSize = 16.sp
             )
         }

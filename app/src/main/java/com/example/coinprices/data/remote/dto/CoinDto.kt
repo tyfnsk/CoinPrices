@@ -13,7 +13,10 @@ data class CoinDto(
     val currentPrice:Double,
 
     @SerializedName("market_cap_rank")
-    val marketCapRank:Int
+    val marketCapRank:Int,
+
+    @SerializedName("price_change_percentage_24h")
+    val priceChangePercentage: Double
 )
 
 
@@ -24,6 +27,7 @@ fun CoinDto.toCoin(): Coin {
         symbol=symbol,
         image=image,
         currentPrice=currentPrice,
-        marketCapRank = marketCapRank
+        marketCapRank = marketCapRank,
+        priceChangePercentage = priceChangePercentage
     )
 }
