@@ -15,6 +15,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.example.coinprices.domain.model.Coin
+import java.text.NumberFormat
+import java.util.Locale
 
 @Composable
 fun CoinListItem(
@@ -51,11 +53,13 @@ fun CoinListItem(
                     fontWeight = FontWeight.Bold,
                     fontSize = 18.sp
                 )
-                Text(
-                    text = "Price: $${coin.currentPrice}",
-                    color = Color.Gray,
-                    fontSize = 14.sp
-                )
+                Row {
+                    Text(text = "Price: ")
+                    Text(text = NumberFormat
+                        .getCurrencyInstance(Locale.US)
+                        .format(coin.currentPrice))
+                }
+
             }
 
 
