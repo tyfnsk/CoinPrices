@@ -1,6 +1,7 @@
 package com.example.coinprices.di
 
 import com.example.coinprices.core.util.API_URL
+import com.example.coinprices.data.local.dao.CoinDao
 import com.example.coinprices.data.remote.CoinApi
 import com.example.coinprices.data.repository.CoinRepositoryImpl
 import com.example.coinprices.domain.repository.CoinRepository
@@ -28,8 +29,8 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideCoinRepository(api: CoinApi): CoinRepository {
-        return CoinRepositoryImpl(api)
+    fun provideCoinRepository(api: CoinApi, dao: CoinDao): CoinRepository {
+        return CoinRepositoryImpl(api, dao)
     }
 
 

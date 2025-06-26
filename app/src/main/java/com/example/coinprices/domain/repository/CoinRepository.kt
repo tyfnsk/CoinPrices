@@ -4,6 +4,6 @@ import com.example.coinprices.domain.model.Coin
 
 interface CoinRepository {
 
-    suspend fun getCoins():List<Coin>
+    suspend fun getCoins(forceRefresh: Boolean = false): List<Coin>
 
 }

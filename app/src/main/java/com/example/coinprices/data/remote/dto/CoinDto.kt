@@ -1,5 +1,6 @@
 package com.example.coinprices.data.remote.dto
 
+import com.example.coinprices.data.local.entity.CoinEntity
 import com.example.coinprices.domain.model.Coin
 import com.google.gson.annotations.SerializedName
 
@@ -31,3 +32,7 @@ fun CoinDto.toCoin(): Coin {
         priceChangePercentage = priceChangePercentage
     )
 }
+
+fun CoinDto.toEntity() = CoinEntity(
+    id, name, symbol, image, currentPrice, marketCapRank, priceChangePercentage
+)

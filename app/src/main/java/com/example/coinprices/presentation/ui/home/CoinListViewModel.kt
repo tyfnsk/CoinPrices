@@ -6,6 +6,7 @@ import com.example.coinprices.domain.use_case.GetCoinsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -18,17 +19,24 @@ class CoinListViewModel @Inject constructor(
     val state: StateFlow<CoinListState> = _state
 
     init {
-        loadCoins()
+        loadCoins()                   // when first loading room is empty so load from api
     }
 
-    private fun loadCoins() {
+    /** call swipe refresh from UI */
+    fun refresh() = loadCoins(forceRefresh = true)
+
+    /** forceRefresh=true ⇒ repull from api refresh to room */
+    private fun loadCoins(forceRefresh: Boolean = false) {
         viewModelScope.launch {
-            _state.value = CoinListState(isLoading = true)
+            _state.update { it.copy(isLoading = true, error = "") }
+
             try {
-                val coins = getCoinsUseCase()
-                _state.value = CoinListState(coins = coins)
+                val list = getCoinsUseCase(forceRefresh)
+                _state.value = CoinListState(coins = list)   // loading=false
             } catch (e: Exception) {
-                _state.value = CoinListState(error = e.message ?: "Unknown error")
+                _state.value = CoinListState(
+                    error = e.localizedMessage ?: "Unknown error"
+                )
             }
         }
     }
