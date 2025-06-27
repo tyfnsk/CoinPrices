@@ -1,5 +1,6 @@
 package com.example.coinprices.presentation.ui.home
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.coinprices.domain.use_case.GetCoinsUseCase
@@ -27,16 +28,24 @@ class CoinListViewModel @Inject constructor(
 
     /** forceRefresh=true ⇒ repull from api refresh to room */
     private fun loadCoins(forceRefresh: Boolean = false) {
+        Log.d("VM", "refresh() called – force=$forceRefresh")
         viewModelScope.launch {
+
             _state.update { it.copy(isLoading = true, error = "") }
 
             try {
                 val list = getCoinsUseCase(forceRefresh)
-                _state.value = CoinListState(coins = list)   // loading=false
+                Log.d("Liste", "refresh() called – force=$list")
+
+                _state.update { it.copy(isLoading = false, coins = list) }
             } catch (e: Exception) {
-                _state.value = CoinListState(
-                    error = e.localizedMessage ?: "Unknown error"
-                )
+
+                _state.update {
+                    it.copy(
+                        isLoading = false,
+                        error = e.localizedMessage ?: "Unknown error"
+                    )
+                }
             }
         }
     }

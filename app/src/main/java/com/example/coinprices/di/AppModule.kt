@@ -1,7 +1,10 @@
 package com.example.coinprices.di
 
+import android.app.Application
+import androidx.room.Room
 import com.example.coinprices.core.util.API_URL
 import com.example.coinprices.data.local.dao.CoinDao
+import com.example.coinprices.data.local.db.CoinDatabase
 import com.example.coinprices.data.remote.CoinApi
 import com.example.coinprices.data.repository.CoinRepositoryImpl
 import com.example.coinprices.domain.repository.CoinRepository
@@ -32,6 +35,13 @@ object AppModule {
     fun provideCoinRepository(api: CoinApi, dao: CoinDao): CoinRepository {
         return CoinRepositoryImpl(api, dao)
     }
+
+    @Provides
+    @Singleton
+    fun provideDb(app: Application) =
+        Room.databaseBuilder(app, CoinDatabase::class.java, "coin_db").build()
+
+    @Provides fun provideDao(db: CoinDatabase) = db.coinDao()
 
 
 }

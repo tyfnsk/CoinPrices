@@ -1,5 +1,6 @@
 package com.example.coinprices.data.repository
 
+import android.util.Log
 import com.example.coinprices.data.local.dao.CoinDao
 import com.example.coinprices.data.local.mapper.toDomain
 import com.example.coinprices.data.remote.CoinApi
@@ -16,7 +17,6 @@ class CoinRepositoryImpl @Inject constructor(
 
     override suspend fun getCoins(forceRefresh: Boolean): List<Coin> {
         val local = dao.getCoins()
-
         val shouldFetch = local.isEmpty() || forceRefresh
         if (shouldFetch) {
             try {
