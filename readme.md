@@ -9,7 +9,7 @@
 ## 🧠 Key Features
 
 - ✅ Real‑time cryptocurrency data using [CoinGecko API](https://www.coingecko.com/)
-- 🛝 Navigation with Jetpack Compose
+- 🧭 Navigation with Jetpack Compose
 - 📄 Coin detail screen with price change
 - 📂 Local caching with Room database
 - 🔄 Swipe‑to‑refresh for updating prices
