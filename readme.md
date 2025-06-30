@@ -23,7 +23,7 @@ This project follows the **Clean Architecture** principles by separating the cod
 
 ### 📂 Project Structure
 
-
+![Project Structure](./ProjectStructure.jpg)
 
 ---
 
@@ -66,9 +66,7 @@ Make sure you have Android Studio installed with latest SDK and Gradle version.
 
 ## 📸 UI Preview
 
-| Coin List Screen |
-| ---------------- |
-|                  |
+![App Screenshot](./CoinCapture1.PNG)
 
 ---
 
