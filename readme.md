@@ -40,6 +40,12 @@ This project follows the **Clean Architecture** principles by separating the cod
 
 ---
 
+
+## 📸 UI Preview
+
+![App Screenshot](./CoinCapture1.PNG)
+
+---
 ## 🚀 Getting Started
 
 ```bash
@@ -52,33 +58,10 @@ Make sure you have Android Studio installed with latest SDK and Gradle version.
 
 ---
 
-## 📚 Folder Overview
-
-| Layer            | Description                                                          |
-| ---------------- | -------------------------------------------------------------------- |
-| **data**         | Contains remote & local data sources, DTOs, and mappers              |
-| **domain**       | Business logic, use cases, repository interface, and models          |
-| **presentation** | UI layer (Jetpack Compose), state management, ViewModels, navigation |
-| **di**           | Hilt modules for dependency injection                                |
-| **core**         | Constants and utility classes                                        |
-
----
-
-## 📸 UI Preview
-
-![App Screenshot](./CoinCapture1.PNG)
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
-
----
 
 ## 🙋‍♂️ Author
 
-Developed by **Tayfun Işık**\
+Developed by [Tayfun ISIK](https://www.tayfunisik.com) \
 If you like the project, feel free to give it a ⭐ on GitHub!
 
 
