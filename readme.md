@@ -43,7 +43,7 @@ This project follows the **Clean Architecture** principles by separating the cod
 
 ## 📸 UI Preview
 
-![App Screenshot](./CoinCapture1.PNG)
+![App Screenshot](./CoinCapture1.PNG?raw=true)
 
 ---
 ## 🚀 Getting Started
