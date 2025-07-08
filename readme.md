@@ -24,7 +24,7 @@ This project follows the **Clean Architecture** principles by separating the cod
 ### 📂 Project Structure
 
 
-<p align="center"><img src="https://github.com/tyfnsk/coinprices/ProjectStructure.jpg?raw=true" alt="Project Structure"></p>
+<p align="center"><img src="https://github.com/tyfnsk/coinprices/blob/master/ProjectStructure.jpg?raw=true" alt="Project Structure"></p>
 ---
 
 ## 🛠️ Tech Stack
@@ -43,8 +43,7 @@ This project follows the **Clean Architecture** principles by separating the cod
 
 ## 📸 UI Preview
 
-![App Screenshot](./CoinCapture1.PNG?raw=true)
-
+<p align="center"><img src="https://github.com/tyfnsk/coinprices/blob/master/CoinCapture1.PNG?raw=true" alt="CoinPrices Capture"></p>
 ---
 ## 🚀 Getting Started
 
