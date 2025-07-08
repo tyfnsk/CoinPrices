@@ -23,8 +23,8 @@ This project follows the **Clean Architecture** principles by separating the cod
 
 ### 📂 Project Structure
 
-![Project Structure](./ProjectStructure.jpg)
 
+<p align="center"><img src="https://github.com/tyfnsk/coinprices/ProjectStructure.jpg?raw=true" alt="Project Structure"></p>
 ---
 
 ## 🛠️ Tech Stack
